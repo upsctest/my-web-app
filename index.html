@@ -4,48 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Web App</h1>
-        <p>Click the button below to purchase our premium content:</p>
-        <button id="purchaseButton">Purchase Premium Content</button>
-    </div>
-    <script>
-        document.getElementById('purchaseButton').addEventListener('click', function() {
-            if (window.AndroidInterface && typeof window.AndroidInterface.initiatePurchase === 'function') {
-                window.AndroidInterface.initiatePurchase('your_product_id');
-            } else {
-                alert('AndroidInterface is not available.');
-            }
-        });
-    </script>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Welcome</h1>
+        <form id="user-form">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            <button type="submit">Submit</button>
+        </form>
+    </header>
+    <script src="scripts.js"></script>
 </body>
 </html>
